@@ -1,0 +1,15 @@
+<div v-show="isSearchOpen" id="myModal" class="modal" >
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-search-bar">
+            <i class="fas fa-search fa-3x"></i>
+            <input v-model="keyword" type="text" placeholder="What are you interested in?">
+            <i @click="closeSearch" class="fas fa-times-circle fa-3x close"></i>
+        </div>
+    </div>
+    <div class="modal-post" >
+        <div v-if="show === 'posts'" class="post">
+            <Post @close-search="closeSearch" :posts="posts" :username="username" search="true" />
+        </div>
+    </div>
+</div>
