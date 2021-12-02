@@ -1,4 +1,8 @@
-<div class="container">
+<div v-if="isLoading.value">
+    loading
+</div>
+
+<div v-else class="container">
     <div class="heading">
         <h1>{{post.title}}</h1>
         <div class="buttons">
@@ -11,6 +15,6 @@
         <p>Posted by <router-link :to="{name: 'profile', params: {id: post.author.username}}">{{post.author.username}}</router-link> on {{post.createdDate}}</p>
     </div>
     <div class="post">
-        <div v-html="postBody"></div>
+        <div>{{post.body}}</div>
     </div>
 </div>

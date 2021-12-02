@@ -34,7 +34,7 @@ export default {
             } catch (error) {
                 console.log("There was a problem");
             }
-            [...posts.value].forEach((post: any, index: number) => {
+            Array.from(posts.value).forEach((post: any, index: number) => {
                 posts.value[index].createdDate = formatDate(posts.value[index]);
             });
             
